@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/*================================
+mixin
+===============================*/
+// レイアウト幅
+$layout-width-inner: 1280px;
+
+// ブレークポイント
+$breakpoints: (
+  "small": "screen and (min-width:10px) and (max-width: 375px)",
+  "sp": "screen and (max-width: 899px)",
+  "tab": "screen and (min-width:900px) and (max-width: #{$layout-width-inner - 1px})",
+  "pc": "screen and (min-width: #{$layout-width-inner})"
+);
+
+// メディアクエリー
+@use "sass:map";
+
+@mixin mq($breakpoint: md) {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

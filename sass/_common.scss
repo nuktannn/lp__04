@@ -1,0 +1,125 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+  base
+  ===============================*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.5;
+  font-size: 1.6rem;
+  background: color.$base-color2;
+  color: color.$base-color;
+  overflow-x: hidden;
+  
+  @include mixin.mq(small) {
+    min-width: 390px;
+    overflow-x: scroll;
+  }
+}
+
+a {
+  transition: all 0.3s ease 0s;
+}
+img {
+  display: block;
+}
+
+.inner {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 120px;
+
+  @include mixin.mq("tab") {
+    padding: 0 40px;
+  }
+
+  @include mixin.mq("sp") {
+    padding: 0 20px;
+  }
+}
+
+/*================================
+ font
+===============================*/
+h2 {
+  font-size: 6rem;
+  font-weight: bold;
+  font-family: font.$font-en;
+
+  @include mixin.mq(sp) {
+    font-size: 4rem;
+  }
+}
+
+h3{
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+ /*** 下から登場するアニメーション ***/
+ @keyframes section-title-anim {
+  0% {
+    transform: translateY(110%);
+  }
+  100% {
+    transform: translateY(0); 
+  }
+}
+
+/*** アニメーションさせる要素 ***/
+.section-title {
+  display: flex;
+  overflow: hidden;
+}
+.section-title span {
+  transform: translateY(110%);
+  display: bl
+}
+
+/*** スクロールで画面に入った場合 ***/
+.section-title.active span {
+  animation: 0.35s section-title-anim linear forwards;
+}
+
+/*** 各span(文字)に遅延時間delayを設定 ***/
+.section-title span:nth-child(1) {
+  animation-delay: 0s;
+}
+.section-title span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.section-title span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.section-title span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.section-title span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.section-title span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.section-title span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+.section-title span:nth-child(8) {
+  animation-delay: 0.7s;
+}
+.section-title span:nth-child(9) {
+  animation-delay: 0.8s;
+}
+.section-title span:nth-child(10) {
+  animation-delay: 0.9s;
+}
+.section-title span:nth-child(11) {
+  animation-delay: 1s;
+}
+

@@ -1,0 +1,79 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+profile
+===============================*/
+.profile {
+    padding: 200px 0px;
+    background: color.$main-color3;
+  
+    @include mixin.mq(tab) {
+      padding: 100px 0px;
+    }
+    @include mixin.mq(sp) {
+      padding: 100px 0;
+    }
+  }
+
+  .profile-inner{
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  .profile-wrapper {
+    display: flex;
+    justify-content: center;
+  
+    @include mixin.mq(sp) {
+      flex-direction: column;
+    }
+  }
+  .profile-left {
+    margin-right: 50px;
+
+    @include mixin.mq(sp) {
+      margin-right: 0;
+    }
+    img {
+      width: 500px;
+      box-shadow: 20px 20px 0 color.$main-color2;
+
+      @include mixin.mq(tab) {
+       width: 500px;
+      }
+  
+      @include mixin.mq(sp) {
+        width: 100%;
+      }
+    }
+  }
+  .profile-right {
+    margin-top: 50px;
+    width: 600px;
+
+    @include mixin.mq(tab) {
+      width: 500px;
+    }
+
+    @include mixin.mq(sp) {
+      width: 100%;
+    }
+  }
+  .profile-sub-title{
+    font-size: 1.2rem;
+  }
+  .profile-text {
+    line-height: 1.8;
+    margin-top: 40px;
+  
+    @include mixin.mq(sp) {
+      margin-top: 30px;
+    }
+  
+    span {
+      font-weight: bold;
+      font-size: 1.8rem;
+    }
+  }

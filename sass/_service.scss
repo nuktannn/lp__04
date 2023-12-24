@@ -1,0 +1,72 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+service
+===============================*/
+.service {
+    padding: 200px 0px;
+    background: color.$main-color;
+
+    @include mixin.mq(tab) {
+      padding: 100px 0;
+    }
+    @include mixin.mq(sp) {
+      padding: 100px 0;
+    }
+  }
+
+  .service-inner{
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .service-header-title {
+   justify-content: center;
+  }
+  .service-sub-title{
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .service-wrapper {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 60px auto 0;
+    gap: 40px;
+  
+    @include mixin.mq(sp) {
+      flex-direction: column;
+    }
+  }
+  
+  .service-item{
+    width: 30%;
+    background: color.$main-color2;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 40px 20px 80px;
+    border-radius: 45% 45% 0 0;
+
+    @include mixin.mq(tab) {
+      margin-top: 30px;
+      margin-right: 40px;
+    }
+  
+    @include mixin.mq(sp) {
+      margin-top: 30px;
+      width: 100%;
+    }
+  }
+  .service-item2 {
+    border-radius: 0 45% 0 45%;
+  }
+  .service-item3 {
+    border-radius: 0 0 45% 45%;
+  }
+
+  .service-text {
+    margin-top: 40px;
+    text-align: left;
+    line-height: 2;
+  }

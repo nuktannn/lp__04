@@ -1,0 +1,148 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+header
+===============================*/
+header {
+  width: 100%;
+  position: relative;
+  background: color.$main-color;
+  padding: 20px;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include mixin.mq(sp) {
+    display: none;
+  }
+}
+
+.header-nav {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.header-nav li:not(:last-child) {
+  margin-right: 50px;
+}
+
+.header-nav li a {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  span {
+    color: color.$base-color;
+    font-size: 1.8rem;
+    font-family: font.$font-en;
+  }
+}
+
+/*================================
+  drawer
+  ===============================*/
+.drawer-icon {
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  z-index: 20;
+  display: none;
+  transition: transform 0.5s ease 0s;
+
+  @include mixin.mq(sp) {
+    display: block;
+  }
+
+  &.is-active {
+    transform: translateX(0px);
+    .drawer-icon-bar1 {
+      transform: rotate(-45deg);
+      top: 8px;
+    }
+    .drawer-icon-bar2 {
+      display: none;
+    }
+    .drawer-icon-bar3 {
+      transform: rotate(45deg);
+      top: 8px;
+    }
+  }
+}
+.drawer-icon-bars {
+  width: 22px;
+  height: 20px;
+  display: block;
+  position: relative;
+}
+.drawer-icon-bar1,
+.drawer-icon-bar2,
+.drawer-icon-bar3 {
+  position: absolute;
+  width: 22px;
+  height: 3px;
+  background: color.$base-color;
+  top: 0;
+  left: 0;
+}
+
+.drawer-icon-bar1 {
+  top: 0;
+}
+.drawer-icon-bar2 {
+  top: 8px;
+}
+.drawer-icon-bar3 {
+  top: 16px;
+}
+
+.drawer-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: color.$main-color2;
+  z-index: 18;
+  transform: translateX(100%);
+  transition: transform 0.5s ease 0s;
+  padding: 150px 80px 0;
+
+  &.is-active {
+    transform: translateX(0);
+  }
+}
+.drawer-content-item {
+  padding: 20px;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+    color: color.$base-color;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    span {
+      color: color.$base-color;
+      font-size: 1.8rem;
+      font-family: font.$font-en;
+    }
+  }
+}

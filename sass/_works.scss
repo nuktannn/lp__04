@@ -1,0 +1,130 @@
+@use "mixin";
+@use "color";
+@use "font";
+
+/*================================
+works
+===============================*/
+.works {
+    padding: 200px 0;
+    background: color.$main-color3;
+
+    @include mixin.mq(tab) {
+      padding: 100px 0;
+    }
+    @include mixin.mq(sp) {
+      padding: 100px 0;
+    }
+  }
+  .works-title {
+    justify-content: center;
+  }
+.works-sub-title{
+  text-align: center;
+  font-size: 1.2rem;
+}
+  .works-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  
+    @include mixin.mq(sp) {
+      flex-direction: column;
+      margin-top: 0px;
+    }
+  }
+  .works-left {
+    background: #d9cfca;
+    padding: 20px;
+    margin-right: 100px;
+    position: relative;
+    margin-top: 100px;
+
+    &:hover{
+      opacity: .7;
+    }
+
+    @include mixin.mq(tab) {
+      margin-right: 50px;
+    }
+  
+    @include mixin.mq(sp) {
+      margin-right: 0;
+      margin: 70px 20px 0;
+    }
+    img {
+      width: 350px;
+  
+      @include mixin.mq(sp) {
+        width: 100%;
+      }
+    }
+  }
+  .works-left-title{
+    font-weight: bold;
+  }
+  .works-number1 {
+    position: absolute;
+    top: -33px;
+    left: -35px;
+    width: 70px;
+    height: 70px;
+    line-height: 65px;
+    border: 1px solid color.$base-color;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2rem;
+
+    @include mixin.mq(sp) {
+      top: -22px;
+      left: -16px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+     font-size: 1.6rem;
+    }
+  }
+  .works-right {
+    background: color.$main-color2;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 100px;
+
+    &:hover{
+      opacity: .7;
+    }
+  
+    @include mixin.mq(sp) {
+      margin: 70px 20px 0;
+    }
+  
+    img {
+      width: 350px;
+  
+      @include mixin.mq(sp) {
+        width: 100%;
+      }
+    }
+  }
+  .works-number2 {
+    content: "02";
+    position: absolute;
+    top: -33px;
+    left: -35px;
+    width: 70px;
+    height: 70px;
+    line-height: 65px;
+    border: 1px solid color.$base-color;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2rem;
+
+    @include mixin.mq(sp) {
+      top: -22px;
+      left: -16px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 1.6rem;
+    }
+  }
